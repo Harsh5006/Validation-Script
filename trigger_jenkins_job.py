@@ -44,7 +44,7 @@ def trigger_jenkins_webhook(url, headers, payload):
 
 
 for file in changed_files:
-    with open(f"../repo1/{file}") as f:
+    with open(f"repo1/{file}") as f:
         data = yaml.safe_load(f)
     environment = 'production'
     application_id = data.get('application_id')
