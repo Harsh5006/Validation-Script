@@ -52,11 +52,11 @@ for file in changed_files:
     testing_time = data.get('time_diff_regions_deployment')
 
     payload = {
-            'parameter': [
-                {'name': 'environment', 'value': environment },
-                {'name': 'application_id', 'value': application_id},
-                {'name': 'version', 'value': version}
-            ]
+            'parameter':{
+                'environment': environment,
+                'application_id': application_id,
+                'version': version
+            }
         }
     trigger_jenkins_webhook(jenkins_url_east,headers,payload)
     time.sleep(testing_time)
